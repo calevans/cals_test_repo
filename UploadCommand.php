@@ -6,13 +6,12 @@ use GuzzleTest\Traits\GetFileList;
 use GuzzleTest\Model\SynchronousUploader;
 use GuzzleTest\Model\AsynchronousUploader;
 
-use Symfony\Component\Console\ {
-  Input\InputInterface,
-  Input\InputOption,
-  Input\InputArgument,
-  Output\OutputInterface,
-  Command\Command
-};
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Command\Command;
+
 
 
 
