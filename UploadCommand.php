@@ -50,19 +50,19 @@ class UploadCommand extends Command
     {
         $output->writeln('Begin Synchronous uploads', OutputInterface::VERBOSITY_NORMAL);
 
-        if ( $input->getOption('sync') && $input->getOption('async') ) {
+        if ($input->getOption('sync') && $input->getOption('async')) {
           throw new \Exception('Cannot process both synchronously and asynchronously');
         }
         $uploader = null;
 
-        if ( $input->getOption('sync')) {
-          $uploader = new SynchronousUploader();
+        if ($input->getOption('sync')) {
+            $uploader = new SynchronousUploader();
         } else if ( $input->getOption('async')) {
-          $uploader = new AsynchronousUploader();
+            $uploader = new AsynchronousUploader();
         }
 
         if ( is_null($uploader)) {
-          throw new \Exception('You must choose either --sync or --async');
+            throw new \Exception('You must choose either --sync or --async');
         }
 
         $this->maxFiles = (int) $input->getOption('count');
@@ -72,31 +72,32 @@ class UploadCommand extends Command
         $fileList = $this->getFileList();
 
         if (
-          is_null($this->maxFiles) ||
-          $this->maxFiles > count($fileList) ||
-          $this->maxFiles < 1
+            is_null($this->maxFiles) ||
+            $this->maxFiles > count($fileList) ||
+            $this->maxFiles < 1
         ) {
-          $this->maxFiles = count($fileList);
+            $this->maxFiles = count($fileList);
         }
         $begintime = microtime(true);
         $output->writeln('Processing ' . $this->maxFiles . ' files.', OutputInterface::VERBOSITY_VERBOSE);
 
         $fileCount = $uploader->execute(
-          $fileList,
-          $this->getApplication()->config['baseurl'],
-          $this->getApplication()->config['paths']['data'],
-          $this->debug,$this->token['token'],
-          $this->maxFiles
+            $fileList,
+            $this->getApplication()->config['baseurl'],
+            $this->getApplication()->config['paths']['data'],
+            $this->debug,
+            $this->token['token'],
+            $this->maxFiles
         );
         $endtime = microtime(true);
 
         $elapsedSeconds = $endtime - $begintime;
 
-        $output->writeln('Files Uploaded   : ' . $fileCount , OutputInterface::VERBOSITY_NORMAL);
-        $output->writeln('Seconds          : ' . $elapsedSeconds , OutputInterface::VERBOSITY_NORMAL);
-        $output->writeln('Seconds per File : ' . $elapsedSeconds / $fileCount , OutputInterface::VERBOSITY_NORMAL);
+        $output->writeln('Files Uploaded   : ' . $fileCount, OutputInterface::VERBOSITY_NORMAL);
+        $output->writeln('Seconds          : ' . $elapsedSeconds, OutputInterface::VERBOSITY_NORMAL);
+        $output->writeln('Seconds per File : ' . $elapsedSeconds / $fileCount, OutputInterface::VERBOSITY_NORMAL);
 
-        $output->writeln('Done' , OutputInterface::VERBOSITY_NORMAL);
+        $output->writeln('Done', OutputInterface::VERBOSITY_NORMAL);
 
         return 1;
     }
