@@ -71,8 +71,7 @@ class UploadCommand extends Command
         $this->getToken($this->debug);
         $fileList = $this->getFileList();
 
-        if (
-            is_null($this->maxFiles) ||
+        if (is_null($this->maxFiles) ||
             $this->maxFiles > count($fileList) ||
             $this->maxFiles < 1) {
             $this->maxFiles = count($fileList);
