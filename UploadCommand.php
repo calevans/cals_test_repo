@@ -51,17 +51,17 @@ class UploadCommand extends Command
         $output->writeln('Begin Synchronous uploads', OutputInterface::VERBOSITY_NORMAL);
 
         if ($input->getOption('sync') && $input->getOption('async')) {
-          throw new \Exception('Cannot process both synchronously and asynchronously');
+            throw new \Exception('Cannot process both synchronously and asynchronously');
         }
         $uploader = null;
 
         if ($input->getOption('sync')) {
             $uploader = new SynchronousUploader();
-        } else if ( $input->getOption('async')) {
+        } else if ($input->getOption('async')) {
             $uploader = new AsynchronousUploader();
         }
 
-        if ( is_null($uploader)) {
+        if (is_null($uploader)) {
             throw new \Exception('You must choose either --sync or --async');
         }
 
@@ -74,8 +74,7 @@ class UploadCommand extends Command
         if (
             is_null($this->maxFiles) ||
             $this->maxFiles > count($fileList) ||
-            $this->maxFiles < 1
-        ) {
+            $this->maxFiles < 1) {
             $this->maxFiles = count($fileList);
         }
         $begintime = microtime(true);
