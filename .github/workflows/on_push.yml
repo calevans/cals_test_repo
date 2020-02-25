@@ -5,6 +5,5 @@ on: [push]
 jobs:
   test:
       name: Test
-      runs-on: docker
       steps:
         - uses: calevans/phpcs-action@9.0.0
