@@ -3,10 +3,8 @@ name: Cal's Test
 on: [push]
 
 jobs:
-  phpcs:
-      name: PHPCS
-      runs-on: ubuntu-latest
+  test:
+      name: Test
+      runs-on: docker
       steps:
-        - uses: calevans/phpcs-action@v5.0.7
-      env:
-        TEST_SECRET: ${{ secrets.TEST_SECRET }}
+        - uses: calevans/phpcs-action@9.0.0
