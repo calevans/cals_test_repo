@@ -46,7 +46,7 @@ class UploadCommand extends Command
           * @param InputInterface  $input
      * @param OutputInterface     $output
      */
-    public function execute(InputInterface  $input,  OutputInterface $output)
+    public function  execute(InputInterface  $input,  OutputInterface $output)
     {
         $output->writeln('Begin Synchronous  uploads', OutputInterface::VERBOSITY_NORMAL);
 
