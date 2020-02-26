@@ -62,7 +62,7 @@ class UploadCommand extends Command
         }
 
         if (is_null($uploader)) {
-            throw new \Exception('You must choose either --sync or --async');
+            throw new \Exception('You cmust choose either --sync or --async');
         }
 
         $this->maxFiles = (int) $input->getOption('count');
