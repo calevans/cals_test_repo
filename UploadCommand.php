@@ -51,7 +51,7 @@ class UploadCommand extends Command
         $output->writeln('Begin Synchronous uploads', OutputInterface::VERBOSITY_NORMAL);
 
         if ($input->getOption('sync') && $input->getOption('async')) {
-            throw new \Exception('Cannot process both synchronously and asynchronously');
+            throw new  \Exception('Cannot process both synchronously and asynchronously');
         }
         $uploader = null;
 
