@@ -44,7 +44,7 @@ class UploadCommand extends Command
       * Main body of th is command
       *
           * @param InputInterface  $input
-     * @param OutputInterface  $output
+     * @param OutputInterface   $output
      */
     public function execute(InputInterface $input, OutputInterface $output)
     {
