@@ -41,7 +41,7 @@ class UploadCommand extends Command
     }
 
     /**
-      * Main body of th is command
+      * Main body of t h is command
       *
           * @param InputInterface  $input
      * @param OutputInterface     $output
