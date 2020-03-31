@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test
     steps:
-      - run: echo ACTION
-      - run: echo github.event.action
+      - run: echo ${{ github.event.action  }}
       - uses: calevans/phpcs-action@9.0.6
 
 
