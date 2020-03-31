@@ -3,10 +3,14 @@ name: Cal's Test
 on:
   pull_request:
     types: opened
-
+  push:
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Test
     steps:
+      - run: echo ACTION
+      - run: echo github.event.action
       - uses: calevans/phpcs-action@9.0.6
+
+
