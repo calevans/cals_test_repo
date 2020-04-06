@@ -1,7 +1,5 @@
-name: Cal's Test
-
-on: [push]
 name: Cal's Test Action
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
