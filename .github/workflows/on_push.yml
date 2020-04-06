@@ -1,8 +1,7 @@
 name: Cal's Test
 
-on:
-  pull_request:
-    types: opened
+on: [push]
+
 jobs:
   test:
     runs-on: ubuntu-latest
