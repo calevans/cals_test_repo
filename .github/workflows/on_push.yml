@@ -7,11 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Test
     steps:
-      - uses: calevans/phpcs-action@9.0.5
       - name: Cal's Test Action
+      - uses: calevans/phpcs-action@9.0.5
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_GT_TEAM_WEBHOOK }}
           SLACK_USERNAME: GT-SlackBot
           SLACK_ICON: https://emoji.slack-edge.com/T8PPLKX2R/jestercap/be08dee5245ca316.png
-
-
