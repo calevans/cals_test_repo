@@ -8,6 +8,10 @@ jobs:
     name: Test
     steps:
       - uses: calevans/phpcs-action@9.0.5
-      - run: echo ${{ github.event.action }}
+      - name: Cal's Test Action
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_GT_TEAM_WEBHOOK }}
+          SLACK_USERNAME: GT-SlackBot
+          SLACK_ICON: https://emoji.slack-edge.com/T8PPLKX2R/jestercap/be08dee5245ca316.png
 
 
