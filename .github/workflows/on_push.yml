@@ -6,7 +6,7 @@ jobs:
     name: Test Job
     steps:
       - uses: actions/checkout@v2
-      - uses: calevans/phpcs-action@10.0.2
+      - uses: calevans/phpcs-action@10.0.3
       - run: composer require vlucal/dotenv guzzlehttp/guzzle
         env:
           SLACK_WEBHOOK: https://hooks.slack.com/services/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
