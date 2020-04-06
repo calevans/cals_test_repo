@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Job
     steps:
+      - uses: actions/checkout@v2
       - uses: calevans/phpcs-action@9.0.5
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_GT_TEAM_WEBHOOK }}
