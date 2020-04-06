@@ -1,13 +1,12 @@
 name: Cal's Test
 
 on: [push]
-
+name: Cal's Test Action
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Test
+    name: Test Job
     steps:
-      - name: Cal's Test Action
       - uses: calevans/phpcs-action@9.0.5
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_GT_TEAM_WEBHOOK }}
