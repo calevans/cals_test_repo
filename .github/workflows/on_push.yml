@@ -9,5 +9,6 @@ jobs:
       - run: composer require vlucas/phpdotenv guzzlehttp/guzzle
       - uses: calevans/phpcs-action@10.0.5
         env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: GT-SlackBot
           SLACK_ICON: https://emoji.slack-edge.com/T8PPLKX2R/jestercap/be08dee5245ca316.png
