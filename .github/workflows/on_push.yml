@@ -6,8 +6,9 @@ jobs:
     name: Test Job
     steps:
       - uses: actions/checkout@v2
-      - uses: calevans/phpcs-action@10.0.1
+      - uses: calevans/phpcs-action@10.0.2
+      - run: composer require vlucal/dotenv guzzlehttp/guzzle
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_GT_TEAM_WEBHOOK }}
+          SLACK_WEBHOOK: https://hooks.slack.com/services/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
           SLACK_USERNAME: GT-SlackBot
           SLACK_ICON: https://emoji.slack-edge.com/T8PPLKX2R/jestercap/be08dee5245ca316.png
