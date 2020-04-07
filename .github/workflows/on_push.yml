@@ -5,10 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Job
     steps:
-      - uses: actions/checkout@v2
-      - run: composer require guzzlehttp/guzzle
-      - uses: themotleyfool/slack-notifier@master
+      - uses: calevans/action-see-me@master
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: GT-SlackBot
-          SLACK_ICON: https://emoji.slack-edge.com/T8PPLKX2R/jestercap/be08dee5245ca316.png
+          CALS_ENV_ONE: one
+          CALS_ENV_TWO: two
+          CALS_ENV_THREE: This one is three
