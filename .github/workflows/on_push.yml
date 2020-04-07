@@ -5,10 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Job
     steps:
-      - uses: calevans/action-see-me@master
+      - name: Action See Me
+        uses: calevans/action-see-me@master
         env:
           CALS_ENV_ONE: one
           CALS_ENV_TWO: two
           CALS_ENV_THREE: This one is three
-        run: |
-          php -i
+      - name: PHP Version
+          run: |
+            php -i
