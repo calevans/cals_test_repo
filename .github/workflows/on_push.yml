@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: composer require guzzlehttp/guzzle
-      - uses: themotleyfool/slack-notifier
+      - uses: themotleyfool/slack-notifier@master
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: GT-SlackBot
