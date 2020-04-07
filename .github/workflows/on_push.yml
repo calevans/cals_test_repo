@@ -12,5 +12,5 @@ jobs:
           CALS_ENV_TWO: two
           CALS_ENV_THREE: This one is three
       - name: PHP Version
-          run: |
-            php -i
+        run: |
+          php -i
