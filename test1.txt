@@ -4,3 +4,5 @@ PING!
 PING?
 PING.
 PING
+ping
+PINg

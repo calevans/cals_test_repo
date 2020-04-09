@@ -1,0 +1,16 @@
+name: Slack Notifier
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Notify Cal's Test Channel
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+      - uses: calevans/slack-notifier@master
+        name: Notify
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: GT-SlackBot
+          SLACK_ICON: https://emoji.slack-edge.com/T8PPLKX2R/jestercap/be08dee5245ca316.png
+          SLACK_COLOR: FF0000
