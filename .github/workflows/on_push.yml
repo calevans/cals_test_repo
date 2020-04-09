@@ -10,12 +10,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Test Job
-#
-# Steps is an array I've started each step with a name but that's not necessary,
-# it jsut makes it easier to read.
-# Each step runs as it's own process. If you look closely at the output of the
-# first step, you'll see the three environment variables defined displayed.
-#
+    #
+    # Steps is an array I've started each step with a name but that's not
+    # necessary, it just makes it easier to read.
+    # Each step runs as it's own process. If you look closely at the output of
+    # the first step, you'll see the three environment variables defined
+    # displayed. If you look at the output of the $_SERVER variable, you won't
+    # see them there.
+    #
     steps:
       - name: Action See Me
         env:
