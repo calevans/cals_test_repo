@@ -1,0 +1,14 @@
+name: Fool Slack Notifier
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Notify globaltech
+    steps:
+      - uses: actions/checkout@v2
+      - uses: themotleyfool/slack-notifier@1.0.7
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: GT-SlackBot
+          SLACK_ICON: https://emoji.slack-edge.com/T8PPLKX2R/jestercap/be08dee5245ca316.png
+          SLACK_COLOR: FF0000
