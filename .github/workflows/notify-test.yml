@@ -6,7 +6,9 @@ jobs:
     name: Notify globaltech
     steps:
       - uses: actions/checkout@v2
+        name: Checkout
       - uses: calevans/slack-notifier@master
+        name: Notify
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: GT-SlackBot
