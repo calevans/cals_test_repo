@@ -1,9 +1,9 @@
-name: Fool Slack Notifier
+name: Slack Notifier
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Notify globaltech
+    name: Notify Cal's Test Channel
     steps:
       - uses: actions/checkout@v2
         name: Checkout
